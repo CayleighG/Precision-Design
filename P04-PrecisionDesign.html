@@ -120,33 +120,47 @@
 </style>
 
 <body>
-    <div id="topBar">
-        <div id="teamName">
-           <h1> Precision Design. </h1>
-        </div>
-        <div id="infoBoxes">
-            <div class="linkBox">
-                <p>@precise_design</p>
+    <div id = "mainPage">
+        <div id="topBar">
+            <div id="teamName">
+               <h1> Precision Design. </h1>
             </div>
-            <div class="linkBox">
-                <p>contact info</p>
+            <div id="infoBoxes">
+                <div class="linkBox">
+                    <p>@precise_design</p>
+                </div>
+                <div class="linkBox">
+                    <p>contact info</p>
+                </div>
             </div>
+            <button onClick = "return error('errorPage','mainPage')">Previous Projects (Test Button, Delete Later)</button>
         </div>
-    </div>
-    <div id="sloganAbstract">
-        <div id="targetShape">
-            <div id="ring1">
-                <div id="ring2">
-                    <div id="ring3">
+        <div id="sloganAbstract">
+            <div id="targetShape">
+                <div id="ring1">
+                    <div id="ring2">
+                        <div id="ring3">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <div id = "errorPage" style = "display: none">
+        <h1 id = "errorSign"><b>404: PAGE NOT FOUND</b></h1>
+        <h2>Uh oh! We can't seem to find the page you're looking for.</h2>
+        <p><b>Our designers were having a fun time in the office and appear to have sent it on an all-expenses paid trip to Floccinaucinihilipilification.</b>
+            <br>
+            Where's that? Who knows! In the meantime, here's a way to backtrack before you get just as lost as the missing page.
+        <p>
+        <button onClick = "return error('mainPage','errorPage')">Return to Home Page</button>
+    </div>
 </body>
 
 <script>
     window.onscroll = function() {resize()};
+    var errorTrue = false;
 
     function resize() {
         var teamName = document.getElementById("teamName");
@@ -161,6 +175,11 @@
             teamName.style.width = "40vw";
             topBar.style.height = "85vh";
         }
+    }
+
+    function error(visiblePage, hiddenPage) {
+        document.getElementById(visiblePage).style.display='block';
+        document.getElementById(hiddenPage).style.display='none';
     }
 </script>
 </html>
